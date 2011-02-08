@@ -1,0 +1,11 @@
+#! /usr/bin/env python
+
+def find_liars(s):
+	
+
+if __name__ == 'main':
+	import sys
+	input = open(sys.argv[1])
+	# readlines?
+	find_liars(input)
+
