@@ -1,11 +1,45 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 
-def find_liars(s):
-	
-
-if __name__ == 'main':
+if __name__ == '__main__':
 	import sys
-	input = open(sys.argv[1])
-	# readlines?
-	find_liars(input)
+	lines = open(sys.argv[1]).readlines()
 
+	nonliars = set([])
+	liars = set([])
+	total = lines.pop(0)
+	table = {}
+
+	import re
+	for i in range(len(lines)):
+		accuser = re.search(r"^(\w+)\s+(\d+)\n", lines[i])
+		if (accuser):
+			name = accuser.group(1)
+			count = int(accuser.group(2))+1
+			table.update({name: lines[i+1:i+count]})
+
+	for k, v in table.iteritems():
+			sys.stdout.write(k+"\n")
+			for x in v:
+				sys.stdout.write("\t"+x+"\n")
+
+#		liar = re.search(r"^(\w+)\n", line)
+#		if (liar):
+#			name = liar.group(1)
+#			if (name in nonliars):
+#				nonliars.remove(name)
+#			
+#			liars.add(name)
+#
+#	sys.stdout.write("NONLIARS\n")
+#	for y in nonliars:
+#		sys.stdout.write(y+"\n")
+#
+#	sys.stdout.write("\nLIARS\n")
+#	for x in liars:
+#		sys.stdout.write(x+"\n")
+
+
+#	ncount = len(nonliars)
+#	lcount = len(liars)
+#	if ((ncount + lcount) == total):
+#		sys.stdout.write(max(ncount, lcount) + " " + min(ncount, lcount))
