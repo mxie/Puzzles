@@ -17,10 +17,12 @@ if __name__ == '__main__':
 			count = int(accuser.group(2))+1
 			table.update({name: lines[i+1:i+count]})
 
-	for k, v in table.iteritems():
-			sys.stdout.write(k+"\n")
-			for x in v:
-				sys.stdout.write("\t"+x+"\n")
+	for a, l in table.iteritems():
+		for liar in l:
+			if (liar in table):
+				 del table[liar]
+			liars.add(liar)
+		nonliars.add(a)
 
 #		liar = re.search(r"^(\w+)\n", line)
 #		if (liar):
