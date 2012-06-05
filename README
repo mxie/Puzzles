@@ -1,1 +1,13 @@
-This is a place where all my solutions to particular programming puzzles live. They're probably mostly written Python, but there might be some in other languages too. Generally, the text files are the test cases and then the others are the programs.
+This is a place where all my solutions to particular programming puzzles live. They're probably mostly written Python, but there might be some in other languages too.
+
+hoppity - Also known as "fizzbuzz", it spits out "Hoppity" if divisible by 3, "Hophop" if divisible by 5, "Hop" if divisible by both, and nothing otherwise. To run: python hoppity testfiles/hop.txt
+
+liarliar - Given a list of names and a number, each name has that many number of names under it. The names listed under each name are those he/she thinks are liars. Do some cross-referencing and generate a list of liars and non-liars. To run: python liarliar testfiles/lies.txt NOTE: this program is still incomplete.
+
+roman - Convert a given number to its Roman numeral representation. To run: python roman [number]
+
+
+The following puzzles may have a solution or two in their respective folders, but may need some fixing for efficiency and accuracy:
+brickwall - Given 2 blocks of different dimensionsand a wall dimension, count the number of ways in which you can build a wall of that dimension such that adjacent rows do not have cracks that line up.
+
+rebus - Description to come.
